@@ -1,0 +1,129 @@
+* { box-sizing: border-box; }
+:root {
+  --ink: #624b4a;
+  --muted: #987c78;
+  --rose: #b66f78;
+  --rose-dark: #965861;
+  --paper: #fffaf7;
+  --line: #ead5d0;
+}
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 34px 16px;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 8% 10%, rgba(225,178,174,.24), transparent 30%),
+    radial-gradient(ellipse at 92% 88%, rgba(218,183,157,.23), transparent 32%),
+    #f8eeea;
+  font-family: "Noto Serif Malayalam", serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-x: hidden;
+}
+.invitation {
+  position: relative;
+  width: min(100%, 720px);
+  padding: 46px clamp(22px, 7vw, 72px) 38px;
+  text-align: center;
+  background: rgba(255,250,247,.96);
+  border: 1px solid #e8d1cb;
+  outline: 1px solid rgba(232,209,203,.55);
+  outline-offset: 7px;
+  box-shadow: 0 24px 70px rgba(105,67,65,.12);
+  animation: appear 1s ease both;
+}
+.invitation::before, .invitation::after {
+  content: "❀";
+  position: absolute;
+  color: #c78c91;
+  font-size: 31px;
+  opacity: .8;
+}
+.invitation::before { top: 13px; left: 17px; }
+.invitation::after { bottom: 13px; right: 17px; }
+.top-ornament { color: #c78c91; letter-spacing: 12px; font-size: 25px; margin-bottom: 18px; }
+.eyebrow, .section-kicker, .date-label {
+  color: var(--rose);
+  letter-spacing: 2px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.intro { color: var(--muted); font-size: 15px; margin: 12px 0 24px; }
+.names { margin: 0 auto; }
+.names h1 {
+  margin: 0;
+  color: #80565a;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(42px, 9vw, 66px);
+  font-weight: 500;
+  letter-spacing: 3px;
+  line-height: 1.12;
+}
+.ampersand {
+  display: block;
+  margin: 3px 0 7px;
+  color: #c38a8c;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 38px;
+  font-style: italic;
+}
+.floral-divider { display: flex; align-items: center; gap: 13px; margin: 27px 0 22px; color: #c38a8c; }
+.floral-divider::before, .floral-divider::after { content: ""; height: 1px; flex: 1; background: var(--line); }
+.floral-divider span { font-size: 24px; }
+.invite-copy { font-size: 16px; line-height: 2.05; margin: 0; }
+.invite-highlight { color: var(--rose-dark); font-size: 16px; line-height: 2; margin: 15px 0 28px; }
+.date-card {
+  margin: 0 auto 30px;
+  padding: 22px 16px 20px;
+  max-width: 440px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.date-label { margin: 0 0 10px; }
+.date-line { display: flex; justify-content: center; align-items: center; gap: 12px; }
+.date-day { color: #a45f69; font-family: "Playfair Display", Georgia, serif; font-size: 76px; line-height: 1; }
+.date-month-year { display: flex; flex-direction: column; align-items: flex-start; color: var(--ink); font-size: 21px; }
+.date-month-year small { color: var(--muted); font-family: "Playfair Display", Georgia, serif; font-size: 19px; letter-spacing: 2px; }
+.weekday { color: var(--muted); margin: 8px 0 15px; }
+.time-pill { display: inline-block; padding: 9px 17px; border-radius: 30px; background: #f7e9e6; color: #8e5d62; font-size: 13px; }
+.venue { margin: 0 auto 30px; }
+.section-kicker { margin: 0 0 10px; }
+.venue h2 { margin: 0 0 8px; color: #80565a; font-family: "Playfair Display", Georgia, serif; font-size: 28px; font-weight: 500; }
+.venue p:not(.section-kicker) { color: var(--muted); font-size: 14px; line-height: 1.8; }
+.map-link { display: inline-block; color: var(--rose-dark); text-decoration: none; border-bottom: 1px solid #c99599; padding-bottom: 3px; font-size: 14px; }
+.countdown-wrap { padding: 22px 0 25px; background: #fcf2ef; border-radius: 4px; }
+.countdown { display: flex; justify-content: center; gap: clamp(10px, 4vw, 28px); }
+.countdown div { min-width: 55px; display: flex; flex-direction: column; gap: 5px; }
+.countdown strong { font-family: "Playfair Display", Georgia, serif; color: #a45f69; font-size: clamp(25px, 5vw, 34px); font-weight: 500; }
+.countdown span { color: var(--muted); font-size: 12px; }
+.rsvp { margin: 26px 0 17px; }
+.rsvp p { margin: 0 0 13px; color: var(--muted); font-size: 14px; }
+.rsvp-button {
+  display: inline-block; padding: 12px 23px; border-radius: 30px;
+  background: var(--rose); color: white; text-decoration: none; font-size: 14px;
+  transition: background .2s, transform .2s;
+}
+.rsvp-button:hover { background: var(--rose-dark); transform: translateY(-2px); }
+.rsvp small { display: block; max-width: 390px; margin: 10px auto 0; color: #a58d88; font-size: 11px; line-height: 1.7; }
+.music-button { border: 1px solid #dfc1bc; color: #94656a; background: transparent; border-radius: 30px; padding: 9px 17px; font: inherit; font-size: 13px; cursor: pointer; }
+.music-button:hover { background: #f8eae7; }
+footer { margin-top: 27px; color: var(--muted); font-size: 14px; line-height: 1.9; }
+footer strong { color: #80565a; font-family: "Playfair Display", Georgia, serif; letter-spacing: 2px; font-size: 15px; }
+.footer-flower { color: #c38a8c; font-size: 23px; margin-bottom: 5px; }
+.petals { position: fixed; color: #c78c91; opacity: .18; pointer-events: none; z-index: -1; }
+.petals-one { top: 8%; left: 5%; font-size: 110px; transform: rotate(-20deg); }
+.petals-two { bottom: 5%; right: 4%; font-size: 130px; transform: rotate(20deg); }
+@keyframes appear { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 520px) {
+  body { padding: 20px 12px; }
+  .invitation { padding: 38px 19px 30px; outline-offset: 4px; }
+  .intro { font-size: 13px; }
+  .invite-copy, .invite-highlight { font-size: 14px; }
+  .desktop-only { display: none; }
+  .time-pill { font-size: 11px; padding: 9px 12px; }
+  .petals-one { left: -24px; font-size: 75px; }
+  .petals-two { right: -25px; font-size: 85px; }
+}
